@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# This function is used to overwrite the "date"
+# entry in the "post".
+
+# 1. Prepare the line.
+datestr="date: $(date +"%Y-%m-%d %H:%M:%S %z")"
+
+# 2. Replace the date line in the file with the datestr variable
+sed -i '' "s/date.*/$datestr/" $1

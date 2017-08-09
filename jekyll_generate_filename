@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# This function is used to append a new date to the
+# file if for whatever reason you need to do so.
+#
+# This so that if there were any files that
+# you wanted to update their datestamp, the script
+# would still work.
+
+# 1. Pass in the filename when executing the script
+name=${1##*_}
+
+# 2. Add the current date to $name to construct the new filename
+newname="$(date +"%Y-%m-%d")_$name"
+
+# 3. Rename the file
+mv $1 $newname
